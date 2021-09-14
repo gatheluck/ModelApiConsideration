@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+    development:
+        container_name: development
+        image: model_api_consideration_development
+        build: 
+            context: ../../
+            dockerfile: environments/development/Dockerfile
+        ports: 
+            - 8000:8000
+        stdin_open: true
+        tty: true
+        volumes:
+            - ../../../:/code
+        environment:
+            HOST: 0.0.0.0
+            PORT: 8000
+            BACKLOG: 2048
+            GRACEFUL_TIMEOUT: 10
+            LOGLEVEL: debug
+            MAX_REQUESTS: 65536
+            MAX_REQUESTS_JITTER: 2048
+            UVICORN_WORKER: uvicorn.workers.UvicornWorker
+            WORKERS: 4

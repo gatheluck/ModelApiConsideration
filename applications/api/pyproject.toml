@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "model_api_consideration"
+version = "0.1.0"
+description = ""
+authors = ["gatheluck <gatheluck+tech@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = "^0.68.1"
+gunicorn = "^20.1.0"
+uvicorn = "^0.15.0"
+
+[tool.poetry.dev-dependencies]
+mypy = "^0.910"
+black = "^21.8b0"
+isort = "^5.9.3"
+flake8 = "^3.9.2"
+pytest-cov = "^2.12.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
